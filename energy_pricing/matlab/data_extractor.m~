@@ -1,0 +1,23 @@
+
+cd /home/nacho/tfg/data_warehouse/energy_pricing/www.omie.es/datosPub/marginalpdbc
+
+fdat=fopen('marginalpdbc_20140109.1', 'r');
+dia =  [];
+
+for i = 1:25
+    if i ~= 1
+        nline=fgetl(fdat); %resto de lineas
+        separate = strsplit(nline, ';');
+        separate = cell2mat(separate);
+        for j = 1:size(separate)
+          dia(,j) = separate(j);
+        end
+        
+        %dia(i,n_lenght)=nline
+    else
+        nline=fgetl(fdat); %primera linea
+    end
+    
+end
+
+cd /home/nacho/tfg/SmartGrid/energy_pricing/matlab
