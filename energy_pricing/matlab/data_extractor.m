@@ -5,14 +5,14 @@ function [dia] = data_extractor(dir)
 
     fdat=fopen(dir, 'r');
     dia = [];
-    ite = [];
+    ite = zeros(1,8);
     for i = 1:25
         if i ~= 1
             nline=fgetl(fdat); %resto de lineas
-            separate = strsplit(nline, ';'); 
+            separate = strsplit(nline, ';'); %Dividimos los strings por ;. Devuelve un array d eceldas
             [y,x] = size(separate);
 
-            for j = 1:7
+            for j = 1:x
                 ite(j) = str2double(separate(j));
 
             end

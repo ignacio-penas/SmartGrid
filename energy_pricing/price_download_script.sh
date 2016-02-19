@@ -7,9 +7,9 @@
 #Updated at 17/02/2016
 ###################################################################
 
-counter=0
+counter=19
 
-while [[ counter -lt 770 ]]; do
+while [[ counter -lt 780 ]]; do
 	tempday=$(date -d "-$counter day" '+%Y %d %m')
 	array=($tempday)
 	#echo $counter
@@ -17,7 +17,6 @@ while [[ counter -lt 770 ]]; do
 
 	if [[ "${array[0]}${array[2]}${array[1]}" == "20150915" || "${array[0]}${array[2]}${array[1]}" == "20141018" || "${array[0]}${array[2]}${array[1]}" == "20140701" || "${array[0]}${array[2]}${array[1]}" == "20140606" ]]
 	then
-		echo "lalaalalalalalalalalalalalalalalalalalala"
 		$(wget -r http://www.omie.es/datosPub/marginalpdbc/marginalpdbc_${array[0]}${array[2]}${array[1]}.2 -P ~/tfg/data_warehouse/energy_pricing)
 	else
 		echo "hola"
