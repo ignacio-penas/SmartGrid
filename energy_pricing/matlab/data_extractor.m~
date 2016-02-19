@@ -2,15 +2,20 @@
 cd /home/nacho/tfg/data_warehouse/energy_pricing/www.omie.es/datosPub/marginalpdbc
 
 fdat=fopen('marginalpdbc_20140109.1', 'r');
-dia =  [];
-
+dia =  [];zeros(25,25);
+ite = [];
 for i = 1:25
     if i ~= 1
         nline=fgetl(fdat); %resto de lineas
         separate = strsplit(nline, ';');
-        separate = cell2mat(separate);
-        for j = 1:size(separate)
-          dia(,j) = separate(j);
+        disp(separate(1));   
+        [y,x] = size(separate);
+        
+        for j = 1:x
+           ite = cell2mat(separate); 
+          disp(separate);
+          separate(j) = str2double(separate(j));
+          dia(i,j) = separate(j);
         end
         
         %dia(i,n_lenght)=nline
