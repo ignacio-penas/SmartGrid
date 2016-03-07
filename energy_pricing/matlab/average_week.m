@@ -3,11 +3,12 @@ function [week] = average_week()
 %   Detailed explanation goes here
     today = datetime;
     aux_day = datenum(today);
-    week = zeros(52e,24);
+    week = zeros(52,24);
     week_number = 0;
     hours_avg = zeros(1,24);
+    max_price = 0;
     
-    for i = 22:779
+    for i = :779
         day_before = addtodate(aux_day, -i, 'day');
         day_before = datestr(day_before);
         day_before = datetime(day_before);
@@ -19,6 +20,7 @@ function [week] = average_week()
         dia = data_extractor(file_name);
         for j = 1:24
             hours_avg(j) = hours_avg(j) + dia(j+1, 6);
+            disp(dia(j+1, 6));
             week(temp_day, j) = week(temp_day, j) + dia(j+1, 6);
         end
     end
