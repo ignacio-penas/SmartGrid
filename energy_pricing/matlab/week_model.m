@@ -1,4 +1,4 @@
-function [week, avg_week, max__price] = week_model()
+function [week, avg_week, max_price] = week_model()
 %Function that extracts a weekly model of the price by hours
     today = datetime;
     aux_day = datenum(today);
@@ -8,7 +8,7 @@ function [week, avg_week, max__price] = week_model()
     max_price= 0;
     max_price_day = datenum(today);
     
-    for i = 36:793
+    for i = 40:797
         day_before = addtodate(aux_day, -i, 'day');
         day_before = datestr(day_before);
         day_before = datetime(day_before);
@@ -22,9 +22,10 @@ function [week, avg_week, max__price] = week_model()
         for j = 1:24
             %Diferenciando el día de la semana, acumulamos el precio por
             %horas
-            week(dayNumber, j) = week(dayNumber, j) + dia(j+1, 5);
+            week(dayNumber, j) = week(dayNumber, j) + dia(j+1, 6);
+            disp(dia(j+1, 6));
             if dia(j+1, 5) >= max_price
-                max_price = dia(j+1, 5);
+                max_price = dia(j+1, 6);
                 max_price_day = day_before;
             end;
         end
