@@ -1,12 +1,11 @@
-function [week, avg_week, max_price] = week_model()
-%Function that extracts a weekly model of the price by hours
+function [ ddays ] = split_HDM()
     today = datetime;
     aux_day = datenum(today);
     week = zeros(7, 24);
     avg_week = zeros(7, 1);
     number_of_days = zeros(7,1);
-    max_price= 0;
-    max_price_day = datenum(today);
+    ddays = zeros(24, 7, 12);
+    n_dday = zeros(24, 7, 12);
     
     %Calculamos el numero de dias desde hoy hasta el 31 de enero de 2016 
     %para emplear en la iteracion
@@ -16,8 +15,10 @@ function [week, avg_week, max_price] = week_model()
         day_before = datestr(day_before);
         day_before = datetime(day_before);
         %Extracción del numero de la semana para ordenar en el array
-        dayNumber = weekday(day_before);
-        number_of_days(dayNumber) = number_of_days(dayNumber) + 1;
+        n_week_day = weekday(day_before);
+        n_month_day = month(day_before);
+        
+        
         day_before = yyyymmdd(day_before);
         file_name = ['marginalpdbc_', num2str(day_before), '.1'];
         disp(file_name);
@@ -25,11 +26,7 @@ function [week, avg_week, max_price] = week_model()
         for j = 1:24
             %Diferenciando el día de la semana, acumulamos el precio por
             %horas
-            week(dayNumber, j) = week(dayNumber, j) + dia(j+1, 6);
-            if dia(j+1, 5) >= max_price
-                max_price = dia(j+1, 6);
-                max_price_day = day_before;
-            end;
+            dday(j, n_week_day, n_month_day) = dday(j, n_week_day, n_month_day) + dia(j+1, 6);
         end
     end
     
@@ -43,5 +40,5 @@ function [week, avg_week, max_price] = week_model()
             end;
         avg_week(w) = avg_week(w)/24;
     end
-    
-    
+end
+
