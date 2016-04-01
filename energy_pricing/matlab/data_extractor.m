@@ -8,6 +8,7 @@ function [dia] = data_extractor(dir)
     ite = zeros(1,8);
     for i = 1:25
         if i ~= 1
+            %disp(dir);
             nline=fgetl(fdat); %resto de lineas
             separate = strsplit(nline, ';'); %Dividimos los strings por ;. Devuelve un array d eceldas
             [y,x] = size(separate);
