@@ -1,4 +1,4 @@
-[days] = days_extractor();
+%[days] = days_extractor();
 
 figure
-boxplot(days);
+boxplot(day);
