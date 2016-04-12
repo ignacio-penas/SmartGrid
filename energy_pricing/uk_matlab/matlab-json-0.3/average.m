@@ -28,7 +28,8 @@ function [prices3d] = average( yy2013, yy2014, yy2015 )
             case 2
                 disp('Enter case 2014');
                 long = size(yy2014);
-                for j = long(2) : 1
+                long = double(long(2));
+                for j = 1 : long
                     tempEpoch = str2double(yy2014(j).millisUTC);
                     date = unix2matlab(tempEpoch);
                     date = datetime(date);
@@ -48,7 +49,8 @@ function [prices3d] = average( yy2013, yy2014, yy2015 )
              case 3
                 disp('Enter case 2015'); 
                 long = size(yy2015);
-                for j = long(2) : 1
+                long = double(long(2));
+                for j = 1 : long
                     tempEpoch = str2double(yy2015(j).millisUTC);
                     date = unix2matlab(tempEpoch);
                     date = datetime(date);
