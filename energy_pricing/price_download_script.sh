@@ -7,9 +7,9 @@
 #Updated at 17/02/2016
 ###################################################################
 
-counter=1916
+counter=1
 
-while [[ counter -lt 1917 ]]; do
+while [[ counter -lt 1930 ]]; do
 	tempday=$(date -d "-$counter day" '+%Y %d %m')
 	array=($tempday)
 	#echo $counter

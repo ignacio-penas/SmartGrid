@@ -1,4 +1,4 @@
-%calc = average_calc();
+calc = average_calc();
 hours = 1:24;
 months = 1:12;
 iterate_month = 1;
@@ -18,4 +18,4 @@ while iterate_month < 13
 end
 
 figure
-plot(hours, hours_avg);
+plot(hours, calc);

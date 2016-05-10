@@ -20,7 +20,7 @@ function [prices3d] = average( yy2013, yy2014, yy2015 )
                     [h,m,s] = hms(date);
                     %disp(h);
                     if ((m == 0) && (s == 0))
-                        disp('hour');
+                        disp('hour 1');
                         prices3d(yearDay, h+1, i) = str2double(yy2013(j).price);
                     end
                     
@@ -41,7 +41,7 @@ function [prices3d] = average( yy2013, yy2014, yy2015 )
                     [h,m,s] = hms(date);
                     
                     if ((m == 0) && (s == 0))
-                        disp('hour');
+                        disp('hour 2');
                         prices3d(yearDay, h+1, i) = str2double(yy2014(j).price);
                     end
                     
@@ -62,7 +62,7 @@ function [prices3d] = average( yy2013, yy2014, yy2015 )
                     [h,m,s] = hms(date);
                     
                     if ((m == 0) && (s == 0))
-                        disp('hour');
+                        disp('hour 3');
                         prices3d(yearDay, h+1, i) = str2double(yy2015(j).price);
                     end
                     

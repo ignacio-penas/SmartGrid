@@ -13,17 +13,17 @@ function [yy2013, yy2014, yy2015] = uk_data_extractor()
 %                 disp('case 2 end');
             case 3
                 disp('case 2013');
-                fname = '/home/nacho/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2013.json';
+                fname = '~/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2013.json';
                 yy2013 = json.read(fname);
                 disp('case 2013 end');
             case 4
                 disp('case 2014');
-                fname = '/home/nacho/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2014.json';
+                fname = '~/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2014.json';
                 yy2014 = json.read(fname);
                 disp('case 2014 end');
             case 5
                 disp('case 2015');
-                fname = '/home/nacho/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2015.json';
+                fname = '~/tfg/data_warehouse/uk_energy/hourlypricing.comed.com/2015.json';
                 yy2015 = json.read(fname);
                 disp('case 5 end');
                

@@ -1,4 +1,4 @@
-%months = average_per_weeks_in_months();
+months = average_per_weeks_in_months();
 
 for i = 1 : 12
     figure
