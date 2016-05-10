@@ -1,10 +1,16 @@
-function [months] = average_calc()
+function [months, aux_months] = average_calc()
 
     today = datetime;
     aux_day = datenum(today);
     months = zeros(12,24);
+    aux_months = [6 6 6 5 5 5 5 5 5 5 5 5];
     hours_avg = zeros(1,24);
-    for i = 39:795
+    %Días desde el enero de 2011 hasta hoy
+    n_days_from_1jan = floor(daysact('01-jan-2011', aux_day));
+    n_days_from_1apr = floor(daysact('01-apr-2016', aux_day)) + 1;
+    disp(n_days_from_1apr);
+    
+    for i = n_days_from_1apr : (n_days_from_1jan)
         day_before = addtodate(aux_day, -i, 'day');
         day_before = datestr(day_before);
         day_before = datetime(day_before);
@@ -22,5 +28,5 @@ function [months] = average_calc()
     hours_avg = hours_avg/760;
     for i = 1:12
         month_days = eomday(2014, i);%Extract each month days
-        months(i, :) = months(i, :)/(2*month_days);
+        months(i, :) = months(i, :)/(24*aux_months(i));
     end
