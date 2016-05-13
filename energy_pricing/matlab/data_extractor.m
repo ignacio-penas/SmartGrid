@@ -24,4 +24,4 @@ function [dia] = data_extractor(dir)
 
     end
 
-    cd ~/SmartGrid/energy_pricing/matlab
+    cd ~/tfg/SmartGrid/energy_pricing/matlab

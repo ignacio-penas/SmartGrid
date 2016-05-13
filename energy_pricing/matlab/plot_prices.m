@@ -1,4 +1,5 @@
 calc = average_calc();
+%calc = months;
 hours = 1:24;
 months = 1:12;
 iterate_month = 1;
