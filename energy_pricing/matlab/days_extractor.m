@@ -34,7 +34,6 @@ function [day] = days_extractor()
         end;
         particular_day = particular_day/count_hours;
         day(number_of_days(dayNumber), dayNumber) = particular_day;
-        
     end;
 end
 

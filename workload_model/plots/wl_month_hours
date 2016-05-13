@@ -1,0 +1,21 @@
+function [ wl_month, number_of_procs, procs_acumm ] = wl_month_hours( diaOptimized )
+	%%Function responsible for averaging the data for each month
+	%%splited in hours
+	number_of_procs = zeros(12,24);
+	procs_acumm = zeros(12,24);
+	wl_month = zeros(12,24);
+	unixTime = 1296571124;
+	[x,y] = size(diaOptimized);
+
+	for i = 1:y
+		disp(i);
+		time = unix2matlab( (diaOptimized(1, i) + unixTime)*1000);
+		time = datetime(time);
+		currentMonth = month(time);
+		currentHour = hour(time);
+
+		procs_acumm(currentMonth, currentHour) = procs_acumm(currentMonth, currentHour) + 1;
+		number_of_procs(currentMonth, currentHour) = number_of_procs(currentMonth, currentHour) + diaOptimized(3,i);
+	end
+
+	wl_day = number_of_procs ./ procs_acumm; 

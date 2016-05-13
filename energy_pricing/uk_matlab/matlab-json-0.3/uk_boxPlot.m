@@ -35,7 +35,7 @@ while i <= long
     
     weekDay = weekday(date);
     
-    prices_acum(weekDay) = prices_acum(weekDay+1) + str2double(yy2014(i).price);
+    prices_acum(weekDay) = prices_acum(weekDay) + str2double(yy2014(i).price);
     number_of_prices(weekDay) = number_of_prices(weekDay) + 1;
     i = i+1;
 end
