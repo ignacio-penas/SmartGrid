@@ -1,10 +1,12 @@
 
 function [ite] = data_extractor(file)
+%This function extracts data centers date from the original format (swf)
+%DataBase : parallel workload
 
     cd /home/cloud/tfg/data_warehouse/cea_curie_workload
 
     fdat=fopen(file, 'r');
-    ite = zeros(5, 550000);
+    ite = zeros(5, 775137);
     aux_line = zeros(1,50);
     i = 0;
     counter = 1;

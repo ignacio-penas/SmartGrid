@@ -1,4 +1,6 @@
 function [n_procs_average, temp_n_procs, average_n_procs] = n_procs_average(diaOptimized)
+%In this function we average the number of procesors employed by
+%the CEA curie date center within one year and a half. The stats are shown by hours
 
 n_procs_average = zeros(1,24);
 temp_n_procs = zeros(1,24);
