@@ -1,23 +1,25 @@
-[week, avg_week] = week_model();
+%[week, avg_week] = week_model();
 
 hours = 1:24;
 days = 1:7;
-%days_S = [Sunday, Monday, Tuesday, Wednesday, Thursday, Fryday, Saturday];
 ite_week = 1;
 
 %Plot week per hours
 
 
     
-figure
+figure(1);
 plot(days, avg_week);
-title('Averge weekly pricing');
+title('Average weekly pricing');
 xlabel('Week days');
-ylabel('MW/h');
+set(gca, 'XTickLabel',{'Sun','Mon','Tue','Wed','Thu','Fri','Sat'});
+ylabel('€MW/h');
 
-figure
+figure(2);
 plot(hours, week);
 legend('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday', 'Saturday');
+title('Daily hourly pricing');
+ylabel('€MW/h');
 % while ite_week < 8
 %     figure
 %     plot(hours, week(ite_week, :));
