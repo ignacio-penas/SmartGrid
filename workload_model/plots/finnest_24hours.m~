@@ -1,0 +1,18 @@
+function [ daily_workload ] = finnest_24hours( diaOptimized )
+%UNTITLED4 Summary of this function goes here
+%   Detailed explanation goes here
+    daily_workload = zeros(24,1);
+    unixTime = 1296571124;
+    [x,y] = size(diaOptimized);
+    
+    for i = 1:y
+        time = unix2matlab( (diaOptimized(1, i) + unixTime)*1000);
+		time = datetime(time);
+        h = hour(time) + 1;
+        
+        precces_last = 
+        disp(h);
+    end;
+
+end
+
