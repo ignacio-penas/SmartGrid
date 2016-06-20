@@ -1,8 +1,23 @@
-array_extractor;
+%array_extractor;
 
 days_pricing = [];
 counter_days_pricing = zeros(7,1);
 
+begin_date = datetime('01-Jan-2013 00:00:00');
+begin_date = datenum(begin_date);
+end_loop = datetime('01-Jan-2014 00:00:00');
+end_loop = datenum(end_loop);
+disp('2013');
+%%2013
+while (begin_date < end_loop)
+    current_hour = hour(begin_date);
+    current_day_of_week = weekday(begin_date);
+    current_month = month(begin_date);
+    current_day_of_month = day(begin_date);
+    days_pricing(current_day_of_week, counter_days_pricing(current_day_of_week)+1) = year2013(current_month, current_day_of_month, current_hour + 1);
+    counter_days_pricing(current_day_of_week) = counter_days_pricing(current_day_of_week) + 1;
+    begin_date =  addtodate(begin_date, 1, 'hour');
+end;
 
 begin_date = datetime('01-Jan-2014 00:00:00');
 begin_date = datenum(begin_date);

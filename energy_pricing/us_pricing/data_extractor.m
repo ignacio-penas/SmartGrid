@@ -44,4 +44,4 @@ function [months] = data_extractor(dir)
         end;
     end;
 
-    cd ~/SmartGrid/energy_pricing/us_pricing
+    cd ~/tfg/SmartGrid/energy_pricing/us_pricing
