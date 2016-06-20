@@ -1,4 +1,4 @@
-%daily_per_hours;
+daily_per_hours;
 
 temp = average_week_days./counter_average_week_days;
 hours = 0:23;

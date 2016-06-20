@@ -30,7 +30,7 @@ function [months] = data_extractor(dir)
             hora = str2double(hora(1));
             franja = strjoin(date(3));
             ite = ite/4;
-            disp(str2double(day(2)));
+            %disp(str2double(day(2)));
             if(strcmp(franja, 'PM') && hora ~= 12)
                 
                 months(str2double(day(2)), hora + 13) = ite;
@@ -44,4 +44,4 @@ function [months] = data_extractor(dir)
         end;
     end;
 
-    cd ~/tfg/SmartGrid/energy_pricing/us_pricing
+    cd ~/SmartGrid/energy_pricing/us_pricing
