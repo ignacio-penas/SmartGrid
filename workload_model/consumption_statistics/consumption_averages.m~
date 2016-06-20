@@ -1,7 +1,15 @@
-function [pTotal, priceTotal] = consumption_averages(country)
+function [pTotal, priceTotal] = consumption_averages(memUsage, nCpusUsed, timeElapsed, country)
 
-pTotal = 0;
+pot_cte = 153.4;
+mem_cte = 0.56;
+cpu_cte = 0.85;
+n_cpu_base = 12;
 priceTotal = 0;
+
+mem_consumption = mem_cte*memUsage;
+cpu_consumption = cpu_cte*nCpusUsed*100/n_cpu_base;
+pTotal = pot_cte + mem_consumption + cpu_consumption;
+
 posibilities = {'sp','spain','1';
                 'uk','united kingdom','2';
                 'us','united states', '3';
@@ -17,22 +25,13 @@ for i = 1:4
     end;
 end;
 
-cd ~/tfg/SmartGrid/workload_model/plots
-load('diaOptimized.mat'); 
-cd ~/tfg/SmartGrid/workload_model/consumption_statistics
-[x, logs_number] = size(diaOptimized);
 switch sw
     case 1
         disp('spain');
         cd ~/tfg/SmartGrid/energy_pricing/comparing
         load('sp_average_day.mat');
-        cd ~/tfg/SmartGrid/workload_model/consumption_statistics
-        for i = 1:logs_number
-            [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), sp_average_days);
-            pTotal = pTotal + pot_partial;
-            priceTotal = priceTotal + price_partial;
-            disp(i);
-        end;
+        cd ~/tfg/SmartGrid/workload_model/plots
+        load('diaOptimized.mat');
         
     case 2
         disp('uk');
