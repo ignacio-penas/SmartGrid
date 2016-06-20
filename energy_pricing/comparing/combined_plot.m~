@@ -3,7 +3,7 @@ load('sp_daily_per_hours.mat');
 load('us_daily_per_hours.mat');
 us_average_week_days = us_average_week_days.';
 
-dolar_euro = 1/0.880715846;
+dolar_euro = 1/0,880715846
 
 uk_average_days = zeros(7,1);
 us_average_days = zeros(7,1);
@@ -36,8 +36,8 @@ sp_average_days = zeros(1,24);
 us_average_days = zeros(1,24);
 for i = 1:24
    for j = 1 : 7
-       sp_average_days(i) = sp_average_days(i) + y(j,mod((i+1),24)+1);
-       uk_average_days(i) = uk_average_days(i) + x(j,mod((i),24)+1);
+       sp_average_days(i) = sp_average_days(i) + y(j,mod((i+3),24)+1);
+       uk_average_days(i) = uk_average_days(i) + x(j,mod((i+2),24)+1);
        us_average_days(i) = us_average_days(i) + us_average_week_days(j,mod((i-6),24)+1);
    end;
    sp_average_days(i) = sp_average_days(i)/7;
