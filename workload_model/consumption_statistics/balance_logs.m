@@ -48,14 +48,12 @@ end;
 
 if (aux_us <= aux_uk && aux_us <= aux_sp)
     price_partial = aux_us;
-else if (aux_sp <= aux_uk && aux_sp <= aux_us)
+elseif (aux_sp <= aux_uk && aux_sp <= aux_us)
     price_partial = aux_sp;
-else if (aux_uk <= aux_sp && aux_uk <= aux_us)
+elseif (aux_uk <= aux_sp && aux_uk <= aux_us)
     price_partial = aux_sp;
 else
         disp('Algoritmo mal implementado');
-    end;
-    end;
 end;
 end
 

@@ -72,18 +72,18 @@ switch sw
         cd ~/tfg/SmartGrid/workload_model/consumption_statistics
         for i = 1:logs_number
             %%Spain
-            [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), sp_average_days);
-            pot_comparation(1,1) = pot_comparation(1,1) + pot_partial;
-            price_comparation(1,1) = price_comparation(1,1) + price_partial;
-            %%UK
-            [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), uk_average_days);
-            pot_comparation(1,2) = pot_comparation(1,2) + pot_partial;
-            price_comparation(1,2) = price_comparation(1,2) + price_partial;
-            %%US
-            [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), us_average_days);
-            pot_comparation(1,3) = pot_comparation(1,3) + pot_partial;
-            price_comparation(1,3) = price_comparation(1,3) + price_partial;
-            
+%             [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), sp_average_days);
+%             pot_comparation(1,1) = pot_comparation(1,1) + pot_partial;
+%             price_comparation(1,1) = price_comparation(1,1) + price_partial;
+%             %%UK
+%             [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), uk_average_days);
+%             pot_comparation(1,2) = pot_comparation(1,2) + pot_partial;
+%             price_comparation(1,2) = price_comparation(1,2) + price_partial;
+%             %%US
+%             [ pot_partial, price_partial] = calculate_log( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)), us_average_days);
+%             pot_comparation(1,3) = pot_comparation(1,3) + pot_partial;
+%             price_comparation(1,3) = price_comparation(1,3) + price_partial;
+%             
             %%Balance
             [ pot_partial, price_partial] = balance_logs( diaOptimized(3, i), diaOptimized(2, i),(diaOptimized(1, i)+diaOptimized(5, i)),sp_average_days, uk_average_days, us_average_days);
             pot_comparation(1,4) = pot_comparation(1,4) + pot_partial;
